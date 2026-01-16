@@ -1,2 +1,2 @@
-Pandas
-Requests
+requests
+pandas
