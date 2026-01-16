@@ -23,8 +23,6 @@ def fetch_hyperliquid_staking_data():
 
         # Save to CSV
         df.to_csv(filename, index=False, encoding='utf-8')
-        
-        # Opcionális: Visszajelzés a konzolon, de csak a lényeg
         print(f"Successfully saved {len(df)} records to {filename}")
 
     except requests.exceptions.RequestException as e:
@@ -33,4 +31,5 @@ def fetch_hyperliquid_staking_data():
         print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
+
     fetch_hyperliquid_staking_data()
