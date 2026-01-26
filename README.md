@@ -25,7 +25,7 @@ This project is a comprehensive **End-to-End data pipeline** designed to analyze
 ---
 ### 🔗 Live Demo & Links
 - [**Dune Analytics - Hyperliquid General Dashboard**](https://dune.com/sogimester/hyperliquid-general)
-- [**Dune Analytics - Hype token Advanced Metrics for Long-term Investment**]([https://dune.com/sogimester/hyperliquid-genera](https://dune.com/sogimester/hype-advanced-metrics)
+- [**Dune Analytics - Hype token Advanced Metrics for Long-term Investment**](https://dune.com/sogimester/hype-advanced-metrics)
 - [**LinkedIn**](https://www.linkedin.com/in/andr%C3%A1s-%C3%A1goston-9b675288/)
 - [**X**](https://x.com/sogimester)
 
