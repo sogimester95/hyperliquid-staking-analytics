@@ -1,22 +1,32 @@
-# Hyperliquid Staking & Validator Analytics
+# Hyperliquid L1 Staking & Validator Analytics (E2E Pipeline)
 
-This project is a comprehensive **End-to-End data pipeline** designed to analyze validator performance and staking distribution on the **Hyperliquid L1** blockchain. The primary goal is to provide transparency regarding network decentralization and staking trends.
+## 📊 Overview
+This project is a high-performance End-to-End (E2E) data pipeline designed to monitor network decentralization and validator health on the Hyperliquid L1 blockchain. It tracks staking distribution, commission trends, and centralization risks by processing raw on-chain and off-chain data.
 
-## Technical Architecture
-1. **Data Extraction (Python)**: A custom script fetches raw JSON data from the ASXN API.
-2. **Data Warehousing (Snowflake)**: Data is loaded into Snowflake, where semi-structured JSON is transformed into relational views using `LATERAL FLATTEN`.
-3. **Visualization (Power BI)**: An interactive dashboard connected via **ODBC** provides real-time business insights and trend analysis.
-4. **On-chain Analytics (Dune)**: SQL-based real-time queries to monitor live network status and validator health.
+## 🛠️ Tech Stack
+- **Language:** Python 3.12
+- **Data Warehouse:** Snowflake (Cloud Data Platform)
+- **ETL/ELT:** Python (Extraction), Snowflake SQL (Transformation using `LATERAL FLATTEN`)
+- **Visualization:** Power BI Desktop
+- **Data Source:** ASXN API
 
-## Key Insights (Business Analysis)
-- **Centralization Risk**: The Top 4 validators control over **67% of the total stake**. This is a critical point for network security and censorship resistance.
-- **Market Competition**: The low variance in commission rates suggests intense price competition among validators to attract stakers.
-- **Network Health**: Currently, **24 active validators** are operational out of the network target of 30.
+## 🏗️ Architecture
+- **Extraction:** A custom Python script fetches semi-structured JSON data from the ASXN API, capturing real-time validator states.
+- **Transformation (The "Silver" Layer):** Leveraging Snowflake's native JSON handling to transform nested arrays into relational structures using `LATERAL FLATTEN`.
+- **Warehousing:** Structured data is stored in Snowflake for historical trend analysis and long-term validator performance tracking.
+- **Analytics:** - **Dune Analytics:** Real-time SQL queries for live network monitoring.
+- **Power BI:** High-level dashboard for business-centric insights (Commission variance, Stake distribution).
 
-## 📂 Repository Structure
-- `/src`: `hyperliquid_api_to_csv.py` - Python extraction script (cleaned for production).
-- `/sql`: Snowflake SQL transformation scripts (DML/DDL).
-- `/docs`: Dashboard screenshots, architecture diagrams, and analysis reports.
+## 🚀 Key Technical Insights & Metrics
+- **Centralization Risk Analysis:** Implemented a "Nakamoto Coefficient" style tracking showing that the Top 4 validators control >67% of the total stake.
+- **Market Dynamics:** Analysis of commission rate variance to identify price competition within the validator set.
+- **Network Health:** Monitoring active vs. target validator counts (Current: 24/30).
+
+## 📂 Project Structure
+- `/src`: `hyperliquid_staking_etl.py` - Python extraction and loading script.
+- `/sql`: `validator_setup.sql` - Snowflake DDL/DML and JSON flattening logic.
+- `/docs`: Architecture diagrams and dashboard screenshots.
+
 
 ## 📈 Dashboard Preview
 - [Main Dashboard](docs/dashboard_main.png)
